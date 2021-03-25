@@ -17,7 +17,7 @@
 <body>
 
 <nav class="navbar">
-    <h4><a href="index.html">Home</a></h4><h5 class="no-bottom must-underline">Classes</h5><ul><li><span class="small-icon C">C</span><b><a href="DiscordVoice.html">DiscordVoice</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.addVoiceTime">addVoiceTime</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.computeLeaderboard">computeLeaderboard</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.createUser">createUser</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.deleteUser">deleteUser</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.fetch">fetch</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.fetchLeaderboard">fetchLeaderboard</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.setURL">setURL</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.setVoiceTime">setVoiceTime</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.start">start</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.subtractVoiceTime">subtractVoiceTime</a></li></ul></li></ul>
+    <h4><a href="index.html">Home</a></h4><h5 class="no-bottom must-underline">Classes</h5><ul><li><span class="small-icon C">C</span><b><a href="DiscordVoice.html">DiscordVoice</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.addVoiceTime">addVoiceTime</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.blacklist">blacklist</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.computeLeaderboard">computeLeaderboard</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.createUser">createUser</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.deleteUser">deleteUser</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.fetch">fetch</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.fetchLeaderboard">fetchLeaderboard</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.resetGuild">resetGuild</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.setURL">setURL</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.setVoiceTime">setVoiceTime</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.start">start</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.subtractVoiceTime">subtractVoiceTime</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.unblacklist">unblacklist</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -151,7 +151,7 @@
     
 
     
-    <h4 class="name" id=".addVoiceTime"><span class="type-signature">(async, static) </span>addVoiceTime<span class="signature">(userId<span class="signature-attributes">opt</span>, guildId<span class="signature-attributes">opt</span>, voicetime<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id=".addVoiceTime"><span class="type-signature">(async, static) </span>addVoiceTime<span class="signature">(userId, guildId, voicetime)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
 
     
@@ -180,8 +180,6 @@
             <th>Type</th>
 
             
-            <th>Attributes</th>
-            
 
             
 
@@ -207,16 +205,6 @@
                 </td>
 
                 
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
-                
 
                 
 
@@ -240,16 +228,6 @@
                 </td>
 
                 
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
-                
 
                 
 
@@ -272,16 +250,6 @@
                 
                 </td>
 
-                
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
                 
 
                 
@@ -381,7 +349,182 @@
     
 
     
-    <h4 class="name" id=".computeLeaderboard"><span class="type-signature">(async, static) </span>computeLeaderboard<span class="signature">(client<span class="signature-attributes">opt</span>, leaderboard<span class="signature-attributes">opt</span>, fetchUsers<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    <h4 class="name" id=".blacklist"><span class="type-signature">(async, static) </span>blacklist<span class="signature">(userId, guildId)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>userId</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>Discord user id.</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>guildId</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>Discord guild id.</p></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>The user data object.</li>
+</ul>
+</div>
+
+
+
+<ul>
+    <li>
+        Type: <span class="simple-code">
+<span class="param-type">object</span>
+
+</span>
+    </li>
+</ul>
+
+    
+
+
+
+
+
+<hr>
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".computeLeaderboard"><span class="type-signature">(async, static) </span>computeLeaderboard<span class="signature">(client, leaderboard, fetchUsers<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array}</span></h4>
     
 
     
@@ -441,8 +584,6 @@
                 
                     <td class="attributes">
                     
-                        &lt;optional><br>
-                    
 
                     
 
@@ -477,8 +618,6 @@
 
                 
                     <td class="attributes">
-                    
-                        &lt;optional><br>
                     
 
                     
@@ -627,7 +766,7 @@
     
 
     
-    <h4 class="name" id=".createUser"><span class="type-signature">(async, static) </span>createUser<span class="signature">(userId<span class="signature-attributes">opt</span>, guildId<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id=".createUser"><span class="type-signature">(async, static) </span>createUser<span class="signature">(userId, guildId)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
 
     
@@ -656,8 +795,6 @@
             <th>Type</th>
 
             
-            <th>Attributes</th>
-            
 
             
 
@@ -683,16 +820,6 @@
                 </td>
 
                 
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
-                
 
                 
 
@@ -715,16 +842,6 @@
                 
                 </td>
 
-                
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
                 
 
                 
@@ -824,7 +941,7 @@
     
 
     
-    <h4 class="name" id=".deleteUser"><span class="type-signature">(async, static) </span>deleteUser<span class="signature">(userId<span class="signature-attributes">opt</span>, guildId<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id=".deleteUser"><span class="type-signature">(async, static) </span>deleteUser<span class="signature">(userId, guildId)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
 
     
@@ -853,8 +970,6 @@
             <th>Type</th>
 
             
-            <th>Attributes</th>
-            
 
             
 
@@ -880,16 +995,6 @@
                 </td>
 
                 
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
-                
 
                 
 
@@ -912,16 +1017,6 @@
                 
                 </td>
 
-                
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
                 
 
                 
@@ -1021,7 +1116,7 @@
     
 
     
-    <h4 class="name" id=".fetch"><span class="type-signature">(async, static) </span>fetch<span class="signature">(userId<span class="signature-attributes">opt</span>, guildId<span class="signature-attributes">opt</span>, fetchPosition<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id=".fetch"><span class="type-signature">(async, static) </span>fetch<span class="signature">(userId, guildId, fetchPosition<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
 
     
@@ -1081,8 +1176,6 @@
                 
                     <td class="attributes">
                     
-                        &lt;optional><br>
-                    
 
                     
 
@@ -1117,8 +1210,6 @@
 
                 
                     <td class="attributes">
-                    
-                        &lt;optional><br>
                     
 
                     
@@ -1267,7 +1358,7 @@
     
 
     
-    <h4 class="name" id=".fetchLeaderboard"><span class="type-signature">(async, static) </span>fetchLeaderboard<span class="signature">(guildId<span class="signature-attributes">opt</span>, limit<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array}</span></h4>
+    <h4 class="name" id=".fetchLeaderboard"><span class="type-signature">(async, static) </span>fetchLeaderboard<span class="signature">(guildId, limit)</span><span class="type-signature"> &rarr; {Array}</span></h4>
     
 
     
@@ -1296,8 +1387,6 @@
             <th>Type</th>
 
             
-            <th>Attributes</th>
-            
 
             
 
@@ -1323,16 +1412,6 @@
                 </td>
 
                 
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
-                
 
                 
 
@@ -1355,16 +1434,6 @@
                 
                 </td>
 
-                
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
                 
 
                 
@@ -1464,7 +1533,7 @@
     
 
     
-    <h4 class="name" id=".setURL"><span class="type-signature">(async, static) </span>setURL<span class="signature">(dbUrl<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id=".resetGuild"><span class="type-signature">(async, static) </span>resetGuild<span class="signature">(guildId)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
     
 
     
@@ -1493,7 +1562,157 @@
             <th>Type</th>
 
             
-            <th>Attributes</th>
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>guildId</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>Discord guild id.</p></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>Return's true if success.</li>
+</ul>
+</div>
+
+
+
+<ul>
+    <li>
+        Type: <span class="simple-code">
+<span class="param-type">boolean</span>
+
+</span>
+    </li>
+</ul>
+
+    
+
+
+
+
+
+<hr>
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".setURL"><span class="type-signature">(async, static) </span>setURL<span class="signature">(dbUrl)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
             
 
             
@@ -1519,16 +1738,6 @@
                 
                 </td>
 
-                
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
                 
 
                 
@@ -1628,7 +1837,7 @@
     
 
     
-    <h4 class="name" id=".setVoiceTime"><span class="type-signature">(async, static) </span>setVoiceTime<span class="signature">(userId<span class="signature-attributes">opt</span>, guildId<span class="signature-attributes">opt</span>, voicetime<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id=".setVoiceTime"><span class="type-signature">(async, static) </span>setVoiceTime<span class="signature">(userId, guildId, voicetime)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
 
     
@@ -1657,8 +1866,6 @@
             <th>Type</th>
 
             
-            <th>Attributes</th>
-            
 
             
 
@@ -1684,16 +1891,6 @@
                 </td>
 
                 
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
-                
 
                 
 
@@ -1717,16 +1914,6 @@
                 </td>
 
                 
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
-                
 
                 
 
@@ -1749,16 +1936,6 @@
                 
                 </td>
 
-                
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
                 
 
                 
@@ -1858,7 +2035,7 @@
     
 
     
-    <h4 class="name" id=".start"><span class="type-signature">(async, static) </span>start<span class="signature">(client<span class="signature-attributes">opt</span>, trackbots<span class="signature-attributes">opt</span>, trackallchannels<span class="signature-attributes">opt</span>, channelID<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id=".start"><span class="type-signature">(async, static) </span>start<span class="signature">(client, trackbots<span class="signature-attributes">opt</span>, trackallchannels<span class="signature-attributes">opt</span>, userlimit<span class="signature-attributes">opt</span>, channelID<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
 
     
@@ -1917,8 +2094,6 @@
 
                 
                     <td class="attributes">
-                    
-                        &lt;optional><br>
                     
 
                     
@@ -2012,6 +2187,45 @@
                 
 
                 <td class="description last"><p>Wheter to track all the voice channels.</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>userlimit</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">number</span>
+
+
+                
+                </td>
+
+                
+                    <td class="attributes">
+                    
+                        &lt;optional><br>
+                    
+
+                    
+
+                    
+                    </td>
+                
+
+                
+                    <td class="default">
+                    
+                        0
+                    
+                    </td>
+                
+
+                <td class="description last"><p>Track when only the voice-channel member count has reached the specified number, 0 = unlimited.</p></td>
             </tr>
 
         
@@ -2143,7 +2357,7 @@
     
 
     
-    <h4 class="name" id=".subtractVoiceTime"><span class="type-signature">(async, static) </span>subtractVoiceTime<span class="signature">(userId<span class="signature-attributes">opt</span>, guildId<span class="signature-attributes">opt</span>, voicetime<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id=".subtractVoiceTime"><span class="type-signature">(async, static) </span>subtractVoiceTime<span class="signature">(userId, guildId, voicetime)</span><span class="type-signature"> &rarr; {object}</span></h4>
     
 
     
@@ -2172,7 +2386,203 @@
             <th>Type</th>
 
             
-            <th>Attributes</th>
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            <tr>
+                
+                    <td class="name"><code>userId</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>Discord user id.</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>guildId</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">string</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>Discord guild id.</p></td>
+            </tr>
+
+        
+
+            <tr>
+                
+                    <td class="name"><code>voicetime</code></td>
+                
+
+                <td class="type">
+                
+                    
+<span class="param-type">number</span>
+
+
+                
+                </td>
+
+                
+
+                
+
+                <td class="description last"><p>Amount of voice time in ms to subtract.</p></td>
+            </tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <ul>
+<li>The user data object.</li>
+</ul>
+</div>
+
+
+
+<ul>
+    <li>
+        Type: <span class="simple-code">
+<span class="param-type">object</span>
+
+</span>
+    </li>
+</ul>
+
+    
+
+
+
+
+
+<hr>
+        
+            
+
+    
+
+    
+    <h4 class="name" id=".unblacklist"><span class="type-signature">(async, static) </span>unblacklist<span class="signature">(userId, guildId)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<div class="table-box">
+    <table class="params">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
             
 
             
@@ -2199,16 +2609,6 @@
                 </td>
 
                 
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
-                
 
                 
 
@@ -2232,53 +2632,10 @@
                 </td>
 
                 
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
-                
 
                 
 
                 <td class="description last"><p>Discord guild id.</p></td>
-            </tr>
-
-        
-
-            <tr>
-                
-                    <td class="name"><code>voicetime</code></td>
-                
-
-                <td class="type">
-                
-                    
-<span class="param-type">number</span>
-
-
-                
-                </td>
-
-                
-                    <td class="attributes">
-                    
-                        &lt;optional><br>
-                    
-
-                    
-
-                    
-                    </td>
-                
-
-                
-
-                <td class="description last"><p>Amount of voice time in ms to subtract.</p></td>
             </tr>
 
         

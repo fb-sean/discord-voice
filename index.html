@@ -17,7 +17,7 @@
 <body>
 
 <nav class="navbar">
-    <h4><a href="index.html">Home</a></h4><h5 class="no-bottom must-underline">Classes</h5><ul><li><span class="small-icon C">C</span><b><a href="DiscordVoice.html">DiscordVoice</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.addVoiceTime">addVoiceTime</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.computeLeaderboard">computeLeaderboard</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.createUser">createUser</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.deleteUser">deleteUser</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.fetch">fetch</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.fetchLeaderboard">fetchLeaderboard</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.setURL">setURL</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.setVoiceTime">setVoiceTime</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.start">start</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.subtractVoiceTime">subtractVoiceTime</a></li></ul></li></ul>
+    <h4><a href="index.html">Home</a></h4><h5 class="no-bottom must-underline">Classes</h5><ul><li><span class="small-icon C">C</span><b><a href="DiscordVoice.html">DiscordVoice</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.addVoiceTime">addVoiceTime</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.blacklist">blacklist</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.computeLeaderboard">computeLeaderboard</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.createUser">createUser</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.deleteUser">deleteUser</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.fetch">fetch</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.fetchLeaderboard">fetchLeaderboard</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.resetGuild">resetGuild</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.setURL">setURL</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.setVoiceTime">setVoiceTime</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.start">start</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.subtractVoiceTime">subtractVoiceTime</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#.unblacklist">unblacklist</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -69,6 +69,15 @@
 <p>You can update to a newer version to receive updates using npm.</p>
 <pre class="prettyprint source lang-cli"><code>npm update discord-voice
 </code></pre>
+<h1>Changelog</h1>
+<ul>
+<li><strong>25 March 2021</strong> (v1.0.2) - <code>WARNING! This update contains some breaking changes in the way start functions works.</code></li>
+</ul>
+<ol>
+<li>Added the system of blacklisting users.</li>
+<li>Added the system of minimum users in a voice channel.</li>
+<li>Added the resetGuild function.</li>
+</ol>
 <h1>Setting Up</h1>
 <p>First things first, we include the module into the project.</p>
 <pre class="prettyprint source lang-js"><code>const Voice = require(&quot;discord-voice&quot;);
@@ -133,9 +142,9 @@ message.channel.send(`**Leaderboard**:\n\n${lb.join(&quot;\n\n&quot;)}`);
 </ul>
 <pre class="prettyprint source"><code>Promise&lt;Object>
 </code></pre>
-<p><strong>Start</strong></p>
-<p>It starts tracking the voice activity of the user's in the configured channel or all voice channels, in that guild. It creates a new user, if there is no entry for that user.</p>
-<pre class="prettyprint source lang-js"><code>Voice.start(&lt;Client - Discord.js Client>, &lt;trackbots - boolean, disabled by default>, &lt;trackallchannels - boolean, enabled by default>, &lt;channelID - String>);
+<p><strong>start</strong></p>
+<p>It starts tracking the voice activity of the user's in the configured channel or all voice channels, you can also supply the min limit of users required in channel for it to start counting (0 = unlimited), in that guild. It creates a new user, if there is no entry for that user.</p>
+<pre class="prettyprint source lang-js"><code>Voice.start(&lt;Client - Discord.js Client>, &lt;trackbots - boolean, disabled by default>, &lt;trackallchannels - boolean, enabled by default>, &lt;userlimit - number, 0 by default>, &lt;channelID - String>);
 </code></pre>
 <ul>
 <li>Output:</li>
@@ -178,6 +187,15 @@ message.channel.send(`**Leaderboard**:\n\n${lb.join(&quot;\n\n&quot;)}`);
 </ul>
 <pre class="prettyprint source"><code>Promise&lt;Boolean/Object>
 </code></pre>
+<p><strong>resetGuild</strong></p>
+<p>It deletes the entire guild's data.</p>
+<pre class="prettyprint source lang-js"><code>Voice.resetGuild(&lt;GuildID - String>);
+</code></pre>
+<ul>
+<li>Output:</li>
+</ul>
+<pre class="prettyprint source"><code>Promise&lt;Boolean/Object>
+</code></pre>
 <p><strong>fetchLeaderboard</strong></p>
 <p>It gets a specified amount of entries from the database, ordered from higgest to lowest within the specified limit of entries.</p>
 <pre class="prettyprint source lang-js"><code>Voice.fetchLeaderboard(&lt;GuildID - String>, &lt;Limit - Integer>);
@@ -195,6 +213,24 @@ message.channel.send(`**Leaderboard**:\n\n${lb.join(&quot;\n\n&quot;)}`);
 <li>Output:</li>
 </ul>
 <pre class="prettyprint source"><code>Promise&lt;Array [Objects]>
+</code></pre>
+<p><strong>blacklist</strong></p>
+<p>It will blacklist the user which will make it not count their voice time.</p>
+<pre class="prettyprint source lang-js"><code>Voice.blacklist(&lt;UserID - String>, &lt;GuildID - String>);
+</code></pre>
+<ul>
+<li>Output:</li>
+</ul>
+<pre class="prettyprint source"><code>Promise&lt;Boolean/Object>
+</code></pre>
+<p><strong>unblacklist</strong></p>
+<p>It will un-blacklist the user which will make it count their voice time.</p>
+<pre class="prettyprint source lang-js"><code>Voice.blacklist(&lt;UserID - String>, &lt;GuildID - String>);
+</code></pre>
+<ul>
+<li>Output:</li>
+</ul>
+<pre class="prettyprint source"><code>Promise&lt;Boolean/Object>
 </code></pre>
 <h1>Enjoying Discord-Voice?</h1>
 <p>Consider donating: https://www.buymeacoffee.com/lebyydev
