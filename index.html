@@ -7,16 +7,26 @@
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
     <script src="scripts/nav.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.3/fuse.min.js"></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link type="text/css" rel="stylesheet" href="styles/skyceil.css">
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 
 <body>
 
 <nav class="navbar">
+    <div class="utilities">
+        <div id="search">
+            <input type="text" id="search-box" placeholder="Search"><br>
+            <div id="search-results" style="display: none;"></div>
+        </div>
+        <button class="theme" data-theme="light"><i class="fas fa-moon"></i></button>
+    </div>
+    <hr>
     <h4><a href="index.html">Home</a></h4><h5 class="no-bottom must-underline">Classes</h5><ul><li><span class="small-icon C">C</span><b><a href="DiscordVoice.html">DiscordVoice</a></b><ul class="has-class-methods"><li><span class="small-icon F">F</span><a href="DiscordVoice.html#addVoiceTime">addVoiceTime</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#blacklist">blacklist</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#channelID">channelID</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#computeLeaderboard">computeLeaderboard</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#createUser">createUser</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#deleteUser">deleteUser</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#fetch">fetch</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#fetchconfig">fetchconfig</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#fetchLeaderboard">fetchLeaderboard</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#removechannelID">removechannelID</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#resetGuild">resetGuild</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#setVoiceTime">setVoiceTime</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#start">start</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#subtractVoiceTime">subtractVoiceTime</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#toggle">toggle</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#trackallchannels">trackallchannels</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#trackbots">trackbots</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#trackDeaf">trackDeaf</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#trackMute">trackMute</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#unblacklist">unblacklist</a></li><li><span class="small-icon F">F</span><a href="DiscordVoice.html#userlimit">userlimit</a></li><li><span class="small-icon M">M</span><a href="DiscordVoice.html#client">client</a></li><li><span class="small-icon M">M</span><a href="DiscordVoice.html#dbUrl">dbUrl</a></li></ul></li></ul><h5 class="no-bottom must-underline">Events</h5><ul><li><span class="small-icon E">E</span><a href="DiscordVoice.html#event:unhandledVoiceStateUpdate">unhandledVoiceStateUpdate</a></li><li><span class="small-icon E">E</span><a href="DiscordVoice.html#event:userVoiceDeaf">userVoiceDeaf</a></li><li><span class="small-icon E">E</span><a href="DiscordVoice.html#event:userVoiceJoin">userVoiceJoin</a></li><li><span class="small-icon E">E</span><a href="DiscordVoice.html#event:userVoiceLeave">userVoiceLeave</a></li><li><span class="small-icon E">E</span><a href="DiscordVoice.html#event:userVoiceMute">userVoiceMute</a></li><li><span class="small-icon E">E</span><a href="DiscordVoice.html#event:userVoiceSwitch">userVoiceSwitch</a></li><li><span class="small-icon E">E</span><a href="DiscordVoice.html#event:userVoiceUnDeaf">userVoiceUnDeaf</a></li><li><span class="small-icon E">E</span><a href="DiscordVoice.html#event:userVoiceUnMute">userVoiceUnMute</a></li></ul>
 </nav>
 
@@ -36,7 +46,7 @@
     
 
 
-    <h3>discord-voice 1.0.3</h3>
+    <h3>discord-voice 1.0.4</h3>
 
 
 
@@ -52,6 +62,7 @@
 
 
 
+    <hr>
     <section>
         <article><p align="center"><a href="https://nodei.co/npm/discord-voice/"><img src="https://nodei.co/npm/discord-voice.png"></a></p>
 <p align="center"><img src="https://img.shields.io/npm/v/discord-voice"> <img src="https://img.shields.io/github/repo-size/Lebyy/discord-voice"> <img src="https://img.shields.io/npm/l/discord-voice"> <img src="https://img.shields.io/npm/dt/discord-voice"> <img src="https://img.shields.io/github/contributors/Lebyy/discord-voice"> <img src="https://img.shields.io/github/package-json/dependency-version/Lebyy/discord-voice/mongoose"> <img src="https://img.shields.io/github/package-json/dependency-version/Lebyy/discord-voice/discord-logs"> <a href="https://discord.gg/pndumb6J3t"><img src="https://discordapp.com/api/guilds/815261972450115585/widget.png" alt="Discord server - https://discord.gg/pndumb6J3t"/></a> <a href="https://discord-voice.js.org"><img src="https://img.shields.io/badge/Documentation-Click%20here-blue" alt="Documentation - https://discord-voice.js.org"/></a></p>
@@ -64,12 +75,19 @@
 </ul>
 <h1>Download &amp; Update</h1>
 <p>You can download it from npm:</p>
-<pre class="prettyprint source lang-cli"><code>npm i discord-voice
+<pre class="prettyprint linenums source lang-cli"><code>npm i discord-voice
 </code></pre>
 <p>You can update to a newer version to receive updates using npm.</p>
-<pre class="prettyprint source lang-cli"><code>npm update discord-voice
+<pre class="prettyprint linenums source lang-cli"><code>npm update discord-voice
 </code></pre>
 <h1>Changelog</h1>
+<ul>
+<li><strong>15 April 2021</strong> (v1.0.4)</li>
+</ul>
+<ol>
+<li>Fixed a bug with the mute handler</li>
+<li>Updated the README to show how to use module</li>
+</ol>
 <ul>
 <li><strong>12 April 2021</strong> (v1.0.3) - <code>WARNING! This update contains a lot of BREAKING changes in the way whole module works, considering reading the README again on how to initiate the new model.</code></li>
 </ul>
@@ -87,27 +105,39 @@
 <li>Added the system of minimum users in a voice channel.</li>
 <li>Added the resetGuild function.</li>
 </ol>
-<h1>Setting Up</h1>
-<p>First things first, we include the module into the project.</p>
-<pre class="prettyprint source lang-js"><code>const DiscordVoice = require(&quot;discord-voice&quot;);
-// You need to supply your Discord.Client here with your mongodb URL!
-const Voice = new DiscordVoice(client, &quot;mongodb://...&quot;);
-</code></pre>
 <h1>Examples</h1>
 <p><em>Following example assumes that you are able to write asynchronous code (use <code>await</code>).</em></p>
 <ul>
-<li><strong>Starting The Voice Activity Tracking</strong></li>
+<li><strong>Launch of the module</strong></li>
 </ul>
-<pre class="prettyprint source lang-js"><code>client.on('ready', async () => {
-const StartVoice = await Voice.start();
+<pre class="prettyprint linenums source lang-js"><code>const Discord = require('discord.js'),
+    client = new Discord.Client(),
+    settings = {
+        prefix: 'dv!',
+        token: 'Your Discord Token'
+    };
+
+// We load the module here
+const DiscordVoice = require(&quot;discord-voice&quot;);
+// You need to supply your Discord.Client here with your mongodb URL!
+const Voice = new DiscordVoice(client, &quot;mongodb://...&quot;);
+
+// We now have a discordVoice property to access Discord-Voice everywhere!
+client.discordVoice = Voice;
+
+client.on('ready', async () => {
+    // We start the voice activity tracking here!
+    await client.discordVoice.start();
 });
+
+client.login(settings.token);
 </code></pre>
 <ul>
 <li><strong>Voice Time Command</strong></li>
 </ul>
-<pre class="prettyprint source lang-js"><code>const target = message.mentions.users.first() || message.author; // Grab the target.
+<pre class="prettyprint linenums source lang-js"><code>const target = message.mentions.users.first() || message.author; // Grab the target.
 
-const user = await Voice.fetch(target.id, message.guild.id); // Selects the target from the database.
+const user = await client.discordVoice.fetch(target.id, message.guild.id); // Selects the target from the database.
 
 if (!user) return message.channel.send(&quot;Seems like this user does not have any Voice Activity so far...&quot;); // If there isnt such user in the database, we send a message in general.
 
@@ -116,11 +146,11 @@ message.channel.send(`> **${target.tag}** currently has ${user.data.voiceTime.to
 <ul>
 <li><strong>Leaderboard Command</strong></li>
 </ul>
-<pre class="prettyprint source lang-js"><code>const rawLeaderboard = await Voice.fetchLeaderboard(message.guild.id, 10); // We grab top 10 users with most voice time in the current server.
+<pre class="prettyprint linenums source lang-js"><code>const rawLeaderboard = await client.discordVoice.fetchLeaderboard(message.guild.id, 10); // We grab top 10 users with most voice time in the current server.
 
 if (rawLeaderboard.length &lt; 1) return reply(&quot;Nobody's in leaderboard yet.&quot;);
 
-const leaderboard = await Voice.computeLeaderboard(client, rawLeaderboard, true); // We process the leaderboard.
+const leaderboard = await client.discordVoice.computeLeaderboard(client, rawLeaderboard, true); // We process the leaderboard.
 
 const lb = leaderboard.map(e => `${e.position}. ${e.username}#${e.discriminator}\nVoice Time: ${e.voiceTime.total}ms`); // We map the outputs.
 
@@ -145,7 +175,7 @@ Thanks 😊</p></article>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> using <a href="https://github.com/zyrouge/jsdoc-skyceil">Skyceil Theme</a>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> using <a href="https://github.com/devsnowflake/jsdoc-skyceil">Skyceil Theme</a>
 </footer>
 
 <script>prettyPrint();</script>
