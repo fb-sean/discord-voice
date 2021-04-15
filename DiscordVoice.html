@@ -525,7 +525,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.addVoiceTime(&lt;UserID - String>, &lt;GuildID - String>, &lt;ChannelId - String>, &lt;Amount - Integer>); // It adds a specified amount of voice time in ms to the current amount of voice time for that user, in that guild.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.addVoiceTime(&lt;UserID - String>, &lt;GuildID - String>, &lt;ChannelId - String>, &lt;Amount - Integer>); // It adds a specified amount of voice time in ms to the current amount of voice time for that user, in that guild.</code></pre>
 
 
 
@@ -671,7 +671,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.blacklist(&lt;UserID - String>, &lt;GuildID - String>); // It will blacklist the user which will make it not count their voice time.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.blacklist(&lt;UserID - String>, &lt;GuildID - String>); // It will blacklist the user which will make it not count their voice time.</code></pre>
 
 
 
@@ -817,7 +817,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.channelID(&lt;GuildID - String>, &lt;Data - String>); It will alter the configuration of channelID.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.channelID(&lt;GuildID - String>, &lt;Data - String>); It will alter the configuration of channelID.</code></pre>
 
 
 
@@ -1030,7 +1030,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.computeLeaderboard(&lt;Client - Discord.js Client>, &lt;Leaderboard - fetchLeaderboard output>, &lt;fetchUsers - boolean, enabled by default>); // It returns a new array of object that include voice time, guild id, user id, leaderboard position (if fetchUsers is set to true), username and discriminator.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.computeLeaderboard(&lt;Client - Discord.js Client>, &lt;Leaderboard - fetchLeaderboard output>, &lt;fetchUsers - boolean, enabled by default>); // It returns a new array of object that include voice time, guild id, user id, leaderboard position (if fetchUsers is set to true), username and discriminator.</code></pre>
 
 
 
@@ -1176,7 +1176,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.createUser(&lt;UserID - String>, &lt;GuildID - String>); // It will create a dataobject for the user-id provided in the specified guild-id entry.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.createUser(&lt;UserID - String>, &lt;GuildID - String>); // It will create a dataobject for the user-id provided in the specified guild-id entry.</code></pre>
 
 
 
@@ -1322,7 +1322,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.deleteUser(&lt;UserID - String>, &lt;GuildID - String>); // It will delete the dataobject for the user-id provided in the specified guild-id entry.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.deleteUser(&lt;UserID - String>, &lt;GuildID - String>); // It will delete the dataobject for the user-id provided in the specified guild-id entry.</code></pre>
 
 
 
@@ -1535,7 +1535,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.fetch(&lt;UserID - String>, &lt;GuildID - String>, &lt;FetchPosition - Boolean>); // Retrives selected entry from the database, if it exists.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.fetch(&lt;UserID - String>, &lt;GuildID - String>, &lt;FetchPosition - Boolean>); // Retrives selected entry from the database, if it exists.</code></pre>
 
 
 
@@ -1658,7 +1658,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.fetchconfig(&lt;GuildID - String>); It will return the config data object if present.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.fetchconfig(&lt;GuildID - String>); It will return the config data object if present.</code></pre>
 
 
 
@@ -1804,7 +1804,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.fetchLeaderboard(&lt;GuildID - String>, &lt;Limit - Integer>); // It gets a specified amount of entries from the database, ordered from higgest to lowest within the specified limit of entries.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.fetchLeaderboard(&lt;GuildID - String>, &lt;Limit - Integer>); // It gets a specified amount of entries from the database, ordered from higgest to lowest within the specified limit of entries.</code></pre>
 
 
 
@@ -1950,7 +1950,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.removechannelID(&lt;GuildID - String>, &lt;Data - String>); It will alter the configuration of channelID.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.removechannelID(&lt;GuildID - String>, &lt;Data - String>); It will alter the configuration of channelID.</code></pre>
 
 
 
@@ -2073,7 +2073,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.resetGuild(&lt;GuildID - String>); // It deletes the entire guild's data-object from the database.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.resetGuild(&lt;GuildID - String>); // It deletes the entire guild's data-object from the database.</code></pre>
 
 
 
@@ -2265,7 +2265,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.setVoiceTime(&lt;UserID - String>, &lt;GuildID - String>, &lt;ChannelId - String>, &lt;Amount - Integer>); // It sets the Voice Time of a user in the specified guild to the specified amount. (MAKE SURE TO PROVIDE THE TIME IN MILLISECONDS!)</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.setVoiceTime(&lt;UserID - String>, &lt;GuildID - String>, &lt;ChannelId - String>, &lt;Amount - Integer>); // It sets the Voice Time of a user in the specified guild to the specified amount. (MAKE SURE TO PROVIDE THE TIME IN MILLISECONDS!)</code></pre>
 
 
 
@@ -2337,7 +2337,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.start(&lt;Client - Discord.js Client>); // It will start the voice activity module.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.start(&lt;Client - Discord.js Client>); // It will start the voice activity module.</code></pre>
 
 
 
@@ -2529,7 +2529,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.subtractVoiceTime(&lt;UserID - String>, &lt;GuildID - String>, &lt;ChannelId - String>, &lt;Amount - Integer>); // It removes a specified amount of voice time in ms to the current amount of voice time for that user, in that guild.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.subtractVoiceTime(&lt;UserID - String>, &lt;GuildID - String>, &lt;ChannelId - String>, &lt;Amount - Integer>); // It removes a specified amount of voice time in ms to the current amount of voice time for that user, in that guild.</code></pre>
 
 
 
@@ -2675,7 +2675,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.toggle(&lt;GuildID - String>, &lt;Data - Boolean>); It will alter the configuration of the module.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.toggle(&lt;GuildID - String>, &lt;Data - Boolean>); It will alter the configuration of the module.</code></pre>
 
 
 
@@ -2821,7 +2821,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.trackallchannels(&lt;GuildID - String>, &lt;Data - Boolean>); It will alter the configuration of trackallchannels.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.trackallchannels(&lt;GuildID - String>, &lt;Data - Boolean>); It will alter the configuration of trackallchannels.</code></pre>
 
 
 
@@ -2967,7 +2967,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.trackbots(&lt;GuildID - String>, &lt;Data - Boolean>); It will alter the configuration of trackbots.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.trackbots(&lt;GuildID - String>, &lt;Data - Boolean>); It will alter the configuration of trackbots.</code></pre>
 
 
 
@@ -3113,7 +3113,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.trackDeaf(&lt;GuildID - String>, &lt;Data - Boolean>); It will alter the configuration of trackDeaf.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.trackDeaf(&lt;GuildID - String>, &lt;Data - Boolean>); It will alter the configuration of trackDeaf.</code></pre>
 
 
 
@@ -3259,7 +3259,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.trackMute(&lt;GuildID - String>, &lt;Data - Boolean>); It will alter the configuration of trackMute.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.trackMute(&lt;GuildID - String>, &lt;Data - Boolean>); It will alter the configuration of trackMute.</code></pre>
 
 
 
@@ -3405,7 +3405,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.unblacklist(&lt;UserID - String>, &lt;GuildID - String>); It will un-blacklist the user which will make it count their voice time.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.unblacklist(&lt;UserID - String>, &lt;GuildID - String>); It will un-blacklist the user which will make it count their voice time.</code></pre>
 
 
 
@@ -3551,7 +3551,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint example linenums"><code>Voice.userlimit(&lt;GuildID - String>, &lt;Data - Number>); It will alter the configuration of userlimit.</code></pre>
+    <pre class="prettyprint example linenums"><code>client.discordVoice.userlimit(&lt;GuildID - String>, &lt;Data - Number>); It will alter the configuration of userlimit.</code></pre>
 
 
 
@@ -3712,7 +3712,7 @@
     <h5>Example</h5>
     
     <pre class="prettyprint example linenums"><code>// This can be used to add features such as logging a user voice activity in a logs channel
-Voice.on('unhandledVoiceStateUpdate', (oldState, newState) => {
+client.discordVoice.on('unhandledVoiceStateUpdate', (oldState, newState) => {
 let logchannel = oldState.member.guild.channels.cache.get("xxxxxxxxxxxxxxxxxx")
 return logchannel.send(`Voice state for member ${oldState.member.user.username} was updated but discord-voice couldn't find what was updated!`);
 });</code></pre>
@@ -3891,7 +3891,7 @@ return logchannel.send(`Voice state for member ${oldState.member.user.username} 
     <h5>Example</h5>
     
     <pre class="prettyprint example linenums"><code>// This can be used to add features such as logging a user voice activity in a logs channel
-Voice.on('userVoiceDeaf', (data, member, channel, DeafType) => {
+client.discordVoice.on('userVoiceDeaf', (data, member, channel, DeafType) => {
 let logchannel = member.guild.channels.cache.get("xxxxxxxxxxxxxxxxxx")
 return logchannel.send(`${member.user.username} has become deafen in ${channel.name}\nTheir deaf type is: ${DeafType}`);
 });</code></pre>
@@ -4070,7 +4070,7 @@ return logchannel.send(`${member.user.username} has become deafen in ${channel.n
     <h5>Example</h5>
     
     <pre class="prettyprint example linenums"><code>// This can be used to add features such as logging a user voice activity in a logs channel
-Voice.on('userVoiceJoin', (data, member, channel, isNew) => {
+client.discordVoice.on('userVoiceJoin', (data, member, channel, isNew) => {
 let logchannel = member.guild.channels.cache.get("xxxxxxxxxxxxxxxxxx")
 return logchannel.send(`${member.user.username} joined ${channel.name} vc!`);
 });</code></pre>
@@ -4226,7 +4226,7 @@ return logchannel.send(`${member.user.username} joined ${channel.name} vc!`);
     <h5>Example</h5>
     
     <pre class="prettyprint example linenums"><code>// This can be used to add features such as logging a user voice activity in a logs channel
-Voice.on('userVoiceLeave', (data, member, channel) => {
+client.discordVoice.on('userVoiceLeave', (data, member, channel) => {
 let logchannel = member.guild.channels.cache.get("xxxxxxxxxxxxxxxxxx")
 return logchannel.send(`${member.user.username} has left ${channel.name} vc!`);
 });</code></pre>
@@ -4405,7 +4405,7 @@ return logchannel.send(`${member.user.username} has left ${channel.name} vc!`);
     <h5>Example</h5>
     
     <pre class="prettyprint example linenums"><code>// This can be used to add features such as logging a user voice activity in a logs channel
-Voice.on('userVoiceMute', (data, member, channel, MuteType) => {
+client.discordVoice.on('userVoiceMute', (data, member, channel, MuteType) => {
 let logchannel = member.guild.channels.cache.get("xxxxxxxxxxxxxxxxxx")
 return logchannel.send(`${member.user.username} has muted their mic in ${channel.name}\nTheir mute type is: ${MuteType}`);
 });</code></pre>
@@ -4561,7 +4561,7 @@ return logchannel.send(`${member.user.username} has muted their mic in ${channel
     <h5>Example</h5>
     
     <pre class="prettyprint example linenums"><code>// This can be used to add features such as logging a user voice activity in a logs channel
-Voice.on('userVoiceSwitch', (member, oldChannel, newChannel) => {
+client.discordVoice.on('userVoiceSwitch', (member, oldChannel, newChannel) => {
 let logchannel = member.guild.channels.cache.get("xxxxxxxxxxxxxxxxxx")
 return logchannel.send(`${member.user.username} swicthed from ${oldChannel.name} to ${newChannel.name} vc!`);
 });</code></pre>
@@ -4763,7 +4763,7 @@ return logchannel.send(`${member.user.username} swicthed from ${oldChannel.name}
     <h5>Example</h5>
     
     <pre class="prettyprint example linenums"><code>// This can be used to add features such as logging a user voice activity in a logs channel
-Voice.on('userVoiceUnDeaf', (data, member, channel, oldDeafType, isNew) => {
+client.discordVoice.on('userVoiceUnDeaf', (data, member, channel, oldDeafType, isNew) => {
 let logchannel = member.guild.channels.cache.get("xxxxxxxxxxxxxxxxxx")
 return logchannel.send(`${member.user.username} has become un-deafen in ${channel.name}\nTheir previous deaf type was: ${oldDeafType}`);
 });</code></pre>
@@ -4965,7 +4965,7 @@ return logchannel.send(`${member.user.username} has become un-deafen in ${channe
     <h5>Example</h5>
     
     <pre class="prettyprint example linenums"><code>// This can be used to add features such as logging a user voice activity in a logs channel
-Voice.on('userVoiceUnMute', (data, member, channel, oldMuteType, isNew) => {
+client.discordVoice.on('userVoiceUnMute', (data, member, channel, oldMuteType, isNew) => {
 let logchannel = member.guild.channels.cache.get("xxxxxxxxxxxxxxxxxx")
 return logchannel.send(`${member.user.username} has un-muted their mic in ${channel.name}\nTheir previous mute type was: ${oldMuteType}`);
 });</code></pre>
